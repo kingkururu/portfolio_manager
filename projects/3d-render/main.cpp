@@ -72,22 +72,22 @@ int main() {
 
             // Back face
             sf::Vertex line[] = {
-                sf::Vertex(sf::Vector2f(vertices[i].x * 100 + 400, vertices[i].y * 100 + 300)),
-                sf::Vertex(sf::Vector2f(vertices[next].x * 100 + 400, vertices[next].y * 100 + 300))
+                sf::Vertex(sf::Vector2f(vertices[i].x * 100 + 400, vertices[i].y * 100 + 300), sf::Color::Red),
+                sf::Vertex(sf::Vector2f(vertices[next].x * 100 + 400, vertices[next].y * 100 + 300), sf::Color::Blue)
             };
             window.draw(line, 2, sf::Lines);
 
             // Front face
             sf::Vertex frontLine[] = {
-                sf::Vertex(sf::Vector2f(vertices[front].x * 100 + 400, vertices[front].y * 100 + 300)),
-                sf::Vertex(sf::Vector2f(vertices[frontNext].x * 100 + 400, vertices[frontNext].y * 100 + 300))
+                sf::Vertex(sf::Vector2f(vertices[front].x * 100 + 400, vertices[front].y * 100 + 300), sf::Color::White),
+                sf::Vertex(sf::Vector2f(vertices[frontNext].x * 100 + 400, vertices[frontNext].y * 100 + 300), sf::Color::Green)
             };
             window.draw(frontLine, 2, sf::Lines);
 
             // Connect front and back faces
             sf::Vertex sideLine[] = {
-                sf::Vertex(sf::Vector2f(vertices[i].x * 100 + 400, vertices[i].y * 100 + 300)),
-                sf::Vertex(sf::Vector2f(vertices[front].x * 100 + 400, vertices[front].y * 100 + 300))
+                sf::Vertex(sf::Vector2f(vertices[i].x * 100 + 400, vertices[i].y * 100 + 300), sf::Color::Yellow),
+                sf::Vertex(sf::Vector2f(vertices[front].x * 100 + 400, vertices[front].y * 100 + 300), sf::Color::Magenta)
             };
             window.draw(sideLine, 2, sf::Lines);
         }
